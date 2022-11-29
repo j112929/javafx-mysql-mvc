@@ -20,7 +20,7 @@ public class TestSQl {
 
 
 
-        Connection con = DBConnect.connectDB("project", "root", "root");
+        Connection con = DBConnect.connectDB();
 
         String sql = "INSERT INTO user VALUES(NULL,?,?,md5('" + password + "'));";  //可以md5
 

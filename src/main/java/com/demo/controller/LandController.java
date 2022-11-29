@@ -37,12 +37,12 @@ public class LandController implements Initializable {
                 prompt.setText("please input password");
             } else {
 
-                String qname = "SELECT username from user where username=" + "'" + username.getText() + "'";
+                String qname = "SELECT username from htt_user where username='" + username.getText() + "'";
                 ResultSet re = DBConnect.executeQuery(qname);
                 if (!re.next()) {
                     prompt.setText("user not exist");
                 } else {
-                    String qpwd = "SELECT id,password from user WHERE username = '" + username.getText() + "';";
+                    String qpwd = "SELECT id,password from htt_user WHERE username = '" + username.getText() + "';";
                     ResultSet re2 = DBConnect.executeQuery(qpwd);
 
                     if (re2.next()) {

@@ -6,7 +6,7 @@ public class DBConnect {
     //"project", "root", "root"
     static String DBName = "510labs";
     static String user = "db510";
-    static String password = "db510";
+    static String password = "510";
 
     public static Connection connectDB() throws SQLException, ClassNotFoundException {
 
@@ -14,7 +14,7 @@ public class DBConnect {
 
         Class.forName("com.mysql.jdbc.Driver");
 
-        String url = "jdbc:mysql://www.papademas.net:3307/" + DBName + "?autoReconnect=true&useSSL=false";
+        String url = "jdbc:mysql://www.papademas.net:3307/" + DBName + "?useSSL=false&autoReconnect=true";
 //                "jdbc:mysql://localhost:3306/" + DBName + "?useSSL=false&characterEncoding=utf-8";
         con = DriverManager.getConnection(url, user, password);
         return con;

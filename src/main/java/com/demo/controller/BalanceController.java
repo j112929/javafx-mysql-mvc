@@ -55,12 +55,12 @@ public class BalanceController implements Initializable {
         username = txtUserName.getText();
         balance = txtBalance.getText();
         try {
-            ResultSet rs = DBConnect.executeQuery("select id from user where username='" + username+"'");
+            ResultSet rs = DBConnect.executeQuery("select id from htt_user where username='" + username+"'");
             if(!rs.next()){
                 return;
             }
             String userId = rs.getString(1);
-            int count = DBConnect.executeUpdate("insert into balance (id,user_id,balance) values (null,"+userId+","+balance+")");
+            int count = DBConnect.executeUpdate("insert into htt_balance (id,user_id,balance) values (null,"+userId+","+balance+")");
             if(count ==0) return;
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Balance Add");
@@ -115,7 +115,7 @@ public class BalanceController implements Initializable {
 //            pst = con.prepareStatement("delete from registation where id = ? ");
 //            pst.setInt(1, id);
 //            pst.executeUpdate();
-            int cnt = DBConnect.executeUpdate("delete from balance where id = "+id);
+            int cnt = DBConnect.executeUpdate("delete from htt_balance where id = "+id);
             if(cnt==0) return;
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Balance Delete");
@@ -143,7 +143,7 @@ public class BalanceController implements Initializable {
         balance = txtBalance.getText();
         try {
 
-            DBConnect.executeUpdate("update balance set balance = "+balance+" where id="+id);
+            DBConnect.executeUpdate("update htt_balance set balance = "+balance+" where id="+id);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Balance Update");

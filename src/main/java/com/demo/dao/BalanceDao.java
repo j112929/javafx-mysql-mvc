@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 
 public class BalanceDao {
     public ObservableList<UserBalanceDTO> list(){
-        String sql ="select b.id,u.username,b.balance from user u right join balance b on u.id=b.user_id";
+        String sql ="select b.id,u.username,b.balance from htt_user u right join htt_balance b on u.id=b.user_id";
         if(!PropertiesUtil.get("user_name").equals("admin")){
             sql+=" where u.id="+PropertiesUtil.get("user_id");
         }

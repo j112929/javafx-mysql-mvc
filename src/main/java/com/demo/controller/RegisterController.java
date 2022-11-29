@@ -29,7 +29,7 @@ public class RegisterController  {
     @FXML
     public void Register() throws Exception {
         if(!username.getText().equals("") && !password.getText().equals("") && !repassword.getText().equals("")) {
-            String sql = "INSERT INTO user VALUES(NULL,"+username.getText()+","+password.getText()+",md5('" + password.getText() + "'));";
+            String sql = "INSERT INTO htt_user VALUES(NULL,"+username.getText()+","+password.getText()+",md5('" + password.getText() + "'));";
 //                    "INSERT INTO user VALUES(NULL,?,?,md5('" + password.getText() + "'));";
 //            PreparedStatement pstm = con.prepareStatement(sql);
 //            pstm.setString(1, username.getText());

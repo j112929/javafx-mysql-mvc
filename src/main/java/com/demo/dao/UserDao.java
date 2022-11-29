@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 
 public class UserDao {
     public String getUserName(int id){
-        ResultSet resultSet = DBConnect.executeQuery("select username from user where id=" + id);
+        ResultSet resultSet = DBConnect.executeQuery("select username from htt_user where id=" + id);
         try {
             if(!resultSet.next()) return "";
             return resultSet.getString("username");
@@ -16,7 +16,7 @@ public class UserDao {
         return "";
     }
     public int getId(String username){
-        ResultSet resultSet = DBConnect.executeQuery("select id from user where username=" + username);
+        ResultSet resultSet = DBConnect.executeQuery("select id from htt_user where username=" + username);
         try {
             if(!resultSet.next()) return 0;
             return resultSet.getInt("id");
